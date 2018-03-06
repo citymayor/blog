@@ -1,7 +1,7 @@
 ---
 title: "Hi There"
 date: 2018-03-06T08:03:28Z
-draft: true
+draft: false
 ---
 
     <p><i class="fas fa-rocket"></i> We just proceeded with <strong>CityMayor's soft launch</strong> on the weekend of March 2nd, 2018. It's been exciting and we've spent a lot of time polishing things and fixing bugs. Fortunately after weeks and weeks of testing, bugs are now only front end bugs and <a href="https://etherscan.io/address/0x4bdDe1E9fbaeF2579dD63E2AbbF0BE445ab93F10">the smart contract</a> at the foundation of this project remains solid.</p>
@@ -18,4 +18,4 @@ draft: true
     </ul>
     <p>If you find any bugs, make sure to tell us! We'll <strong>reward</strong> you with <code>CityCoins</code> if you send us your address :) we are reachable by <a href="mailto:hello@citymayor.co">email</a>, on <i class="fab fa-twitter-square"></i> <a href="https://twitter.com/citymayorco">twitter</a>, on <i class="fab fa-facebook-square"></i> <a href="https://www.facebook.com/citymayor.co/">facebook</a>, on <i class="fab fa-discord"></i> <a href="https://discord.gg/kPmGs7y">discord</a> and on <i class="fab fa-telegram"></i> <a href="https://t.me/citymayor">telegram</a>.</p>
     <p>And thank-you for participating in this exciting experiment!</p>
-    <p><i class="fas fa-university"></i> <strong>The United Nations</strong>.</p>
+    <p><i class="fas fa-university"></i> <strong>The United Nations</strong></p>
