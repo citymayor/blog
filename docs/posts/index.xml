@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CityMayor Blog</title>
-    <link>https://blog.citymayor.co/</link>
-    <description>Recent content on CityMayor Blog</description>
+    <title>Posts on CityMayor Blog</title>
+    <link>https://blog.citymayor.co/posts/</link>
+    <description>Recent content in Posts on CityMayor Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 06 Mar 2018 08:03:28 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.citymayor.co/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.citymayor.co/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
