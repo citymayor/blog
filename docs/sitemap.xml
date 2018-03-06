@@ -3,17 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://citymayor.github.io/blog/categories/</loc>
+    <loc>https://blog.citymayor.co/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://citymayor.github.io/blog/</loc>
+    <loc>https://blog.citymayor.co/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://citymayor.github.io/blog/tags/</loc>
+    <loc>https://blog.citymayor.co/tags/</loc>
     <priority>0</priority>
   </url>
   
