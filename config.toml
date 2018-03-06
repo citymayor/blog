@@ -1,4 +1,4 @@
-baseURL = "https://blog.citymayor.co/"
+baseURL = "https://citymayor.github.io/blog/"
 languageCode = "en-us"
 title = "CityMayor Blog"
 theme = "ananke"
