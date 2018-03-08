@@ -17,7 +17,7 @@
       <pubDate>Thu, 08 Mar 2018 16:47:00 +0000</pubDate>
       
       <guid>https://blog.citymayor.co/posts/how-someone-tried-to-exploit-a-flaw-in-our-smart-contract-and-steal-all-of-its-ether/</guid>
-      <description>On March 7th, we noticed some weird transactions happening on CityMayor. First, someone used our contract directly instead of going through the DAPP. We know that, because a nickname is mandatory if you want to use the DAPP to interact with the CityMayor contract.
+      <description>On March 7th, we noticed some weird transactions happening on CityMayor. First, someone used our contract directly instead of going through the dAPP. We know that, because a nickname is mandatory if you want to use the DAPP to interact with the CityMayor contract.
 Now, don&amp;rsquo;t get me wrong, that&amp;rsquo;s pretty neat! We are not against people using the contract directly, and we actually encourage you to do so :) We&amp;rsquo;ve extensively documented the smart contract on etherscan.</description>
     </item>
     
