@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.citymayor.co/posts/how-someone-tried-to-exploit-a-flaw-in-our-smart-contract-and-steal-all-of-its-ether/</loc>
+    <lastmod>2018-03-08T16:47:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.citymayor.co/posts/hi-there/</loc>
     <lastmod>2018-03-06T08:03:28+00:00</lastmod>
   </url>
@@ -14,13 +19,13 @@
   
   <url>
     <loc>https://blog.citymayor.co/</loc>
-    <lastmod>2018-03-06T08:03:28+00:00</lastmod>
+    <lastmod>2018-03-08T16:47:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://blog.citymayor.co/posts/</loc>
-    <lastmod>2018-03-06T08:03:28+00:00</lastmod>
+    <lastmod>2018-03-08T16:47:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
