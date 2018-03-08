@@ -3,3 +3,9 @@ languageCode = "en-us"
 title = "CityMayor Blog"
 theme = "ananke"
 publishDir = "docs"
+
+[[menu.main]]
+    name = "back to CityMayor.co"
+    pre = "<i class='fa fa-heart'></i>"
+    weight = 300
+    url = "https://www.citymayor.co"
