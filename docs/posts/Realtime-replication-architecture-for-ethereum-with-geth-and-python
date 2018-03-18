@@ -1,0 +1,49 @@
+---
+title: "How to replicate your smartcontract transactions in realtime with your own Ethereum node"
+date: 2018-03-13T20:26:52Z
+draft: false
+---
+
+Citymayor . 
+
+
+## A bit of background: 
+
+- We want a dApp fast for the user. 
+- We want make it easy for us (developers) to read and aggregate data.  
+- We needed 
+
+
+
+
+A first way to think about a dApp is to query directly data you want to show to your user from your Ethereum node directly. The biggest cons of it is that you'd need to do all the data structure aggregation by yourself, on each of your user. 
+
+
+
+Why you shouldn't build a fully decentralized dApp:
+
+One of our main goal for Citymayor was to create the best experience possible for our users. Also we wanted to make it easy for us to query the data easily. 
+
+Our smart contract has some really basic data structure. However, it wouldn't be handy to query them in the front end directly
+
+
+ Ethereum has some scaling issue
+
+
+- It would be slow and the dApp not as fun. We are prioritizing than beeing fully decentralized
+
+Classic architecture : 
+Cons : You can't store . Aggregate data / sort / read is not easy. Your code in the frontend can become really messy
+Pro: You don't need a database . Architecture is simpler
+
+
+Instead of having half data in the block chain and the other part in API, we wanted to have . This has 2 benefit : frontend code is a lot easier. we have a single place where to .
+
+Listener : 
+- All functions in the contract that change any data trigger an event . This event is then caught by our listener that replicate the data in our Postgresql database. 
+
+Challenges on keeping our node in sync
+
+
+
+Also, note that [Infura is working on events support with websockets](https://github.com/INFURA/infura/issues/29)  . This could be a good alternative and avoid the overhead of maintaining your own node.
