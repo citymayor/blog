@@ -1,6 +1,6 @@
 baseURL = "https://blog.citymayor.co"
 languageCode = "en-us"
-title = "CityMayor Blog"
+title = "CityMayor"
 theme = "ananke"
 publishDir = "docs"
 googleAnalytics = "UA-106516-14"
