@@ -25,7 +25,8 @@
 
     <meta property="og:title" content="Anatomy of an Ethereum dApp with Realtime Replication using Zeppelin, Python, Postgresql, React and Geth" />
 <meta property="og:description" content="We got many questions on how the CityMayor dApp was working under the hood. We will try to explain it in this blog post and the reasons behind those decisions.
-For our requirements, we wanted to offer the best dApp experience to the CityMayor users and avoid a slow dApp. We also wanted to make it as simple as possible for us (developers) to add and maintain features, but also make it easy to deal with the smart contract." />
+For our requirements:
+ We wanted to offer the best dApp experience to the CityMayor users and avoid a slow dApp. Non-ethereum users should to be able to take a look at what we were doing without the need to install metamask or use something like Mist." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.citymayor.co/posts/anatomy-of-an-ethereum-dapp/" />
 
@@ -47,12 +48,13 @@ For our requirements, we wanted to offer the best dApp experience to the CityMay
 
 <meta itemprop="name" content="Anatomy of an Ethereum dApp with Realtime Replication using Zeppelin, Python, Postgresql, React and Geth">
 <meta itemprop="description" content="We got many questions on how the CityMayor dApp was working under the hood. We will try to explain it in this blog post and the reasons behind those decisions.
-For our requirements, we wanted to offer the best dApp experience to the CityMayor users and avoid a slow dApp. We also wanted to make it as simple as possible for us (developers) to add and maintain features, but also make it easy to deal with the smart contract.">
+For our requirements:
+ We wanted to offer the best dApp experience to the CityMayor users and avoid a slow dApp. Non-ethereum users should to be able to take a look at what we were doing without the need to install metamask or use something like Mist.">
 
 
 <meta itemprop="datePublished" content="2018-03-13T20:26:52&#43;00:00" />
 <meta itemprop="dateModified" content="2018-03-13T20:26:52&#43;00:00" />
-<meta itemprop="wordCount" content="1357">
+<meta itemprop="wordCount" content="1425">
 
 
 
@@ -60,7 +62,8 @@ For our requirements, we wanted to offer the best dApp experience to the CityMay
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Anatomy of an Ethereum dApp with Realtime Replication using Zeppelin, Python, Postgresql, React and Geth"/>
 <meta name="twitter:description" content="We got many questions on how the CityMayor dApp was working under the hood. We will try to explain it in this blog post and the reasons behind those decisions.
-For our requirements, we wanted to offer the best dApp experience to the CityMayor users and avoid a slow dApp. We also wanted to make it as simple as possible for us (developers) to add and maintain features, but also make it easy to deal with the smart contract."/>
+For our requirements:
+ We wanted to offer the best dApp experience to the CityMayor users and avoid a slow dApp. Non-ethereum users should to be able to take a look at what we were doing without the need to install metamask or use something like Mist."/>
 
       
 <script>
@@ -127,13 +130,20 @@ ga('send', 'pageview');
 
 <p>We got many questions on how the <a href="https://citymayor.co">CityMayor</a> dApp was working under the hood. We will try to explain it in this blog post and the reasons behind those decisions.</p>
 
-<p>For our requirements, we wanted to offer the <strong>best dApp experience</strong> to the <a href="https://citymayor.co">CityMayor</a> users and avoid a slow dApp. We also wanted to make it as simple as possible for us (developers) to add and maintain features, but also make it easy to deal with the smart contract.</p>
+<p>For our requirements:</p>
 
-<p>The first solution we thought about was to handle everything in the dApp. It would have 2 distinct parts. The smart contract, running on the blockchain, and the frontend that would take care of handling all the data processing to the user. However, even if we keep the data structure in the <a href="https://etherscan.io/address/0x4bdde1e9fbaef2579dd63e2abbf0be445ab93f10#code">CityMayor contract source</a> as simple as possible, we didn&rsquo;t want to handle the data processing in the frontend. The other con, was that we couldn&rsquo;t really understand what happen to some users if all the data were in the frontend, what would have made it a lot harder the debuguing process.</p>
+<ul>
+<li>We wanted to offer the <strong>best dApp experience</strong> to the <a href="https://citymayor.co">CityMayor</a> users and avoid a slow dApp.</li>
+<li>Non-ethereum users should to be able to take a look at what we were doing without the need to install metamask or use something like Mist. This also means that as an ethereum user you can check what&rsquo;s up when you&rsquo;re not on your main Ethereum device.</li>
+<li>Help people nderstand what was happening without having to check for their transactions manually in Metamask or Etherscan</li>
+<li>Make it as simple as possible for us (developers) to add and maintain features, but also make it easy to deal with the smart contract.</li>
+</ul>
+
+<p>The first solution we thought about was to handle everything in the dApp. It would have 2 distinct parts. The smart contract, running on the blockchain, and the frontend that would take care of handling all the data processing to the user. However, even if we keep the data structure in the <a href="https://etherscan.io/address/0x4bdde1e9fbaef2579dd63e2abbf0be445ab93f10#code">CityMayor contract source</a> as simple as possible, we didn&rsquo;t want to handle the data processing in the frontend. The other con, was that we couldn’t really understand what happens to some users if all the data were in the frontend, what would have made the debuguing process a lot harder.</p>
 
 <!-- Need to find better transition -->
 
-<p>At the end, we decided to have an architecture with 4 distinct parts, that will allow us to <strong>easily interract with the data easily, debug, and fix things quickly</strong>:</p>
+<p>At the end, we decided to have an architecture with 4 distinct parts, that will allow us to <strong>easily interract with the data, debug, and fix things quickly</strong>:</p>
 
 <ul>
 <li>The smart contract</li>
@@ -142,7 +152,7 @@ ga('send', 'pageview');
 <li>The dApp</li>
 </ul>
 
-<p>Let&rsquo;s have a deeper look on those 4 separate parts, with the tools/technology we used to build them</p>
+<p>Let&rsquo;s have a deeper look on those 4 separate parts, with the tools/technologies we used to build them.</p>
 
 <h2 id="1-the-smart-contract">1. The (Smart) Contract</h2>
 
@@ -159,10 +169,10 @@ ga('send', 'pageview');
 
 <p>Wait, what do you mean by &ldquo;<em>directly</em>&rdquo;?</p>
 
-<p>You can actually interract with any Ethereum contracts by calling any function of it directly. For this, you just need Ethereum wallet like Mist or Metamask, know the address of the contract, and the name of the function. For example for CityMayor, we have <a href="(https://etherscan.io/address/0x4bdde1e9fbaef2579dd63e2abbf0be445ab93f10#code)">open sourced</a> our contract, so simply calling any public method name like <code>buyCity</code> or <code>sellCityForEther</code> would work without having to open any website!
+<p>You can actually interract with any Ethereum contracts by calling any function of it directly. For this, you just need an Ethereum wallet like Mist or MetAmask, know the address of the contract, and the name of the function. For example for CityMayor, we have <a href="(https://etherscan.io/address/0x4bdde1e9fbaef2579dd63e2abbf0be445ab93f10#code)">open sourced</a> our contract, so simply calling any public method name like <code>buyCity</code> or <code>sellCityForEther</code> would work without having to open any website!
 <img src="/img/architecture/direct-interraction.png" alt="Ethereum Smart Contract Direct Interraction" /></p>
 
-<p>However, the interrest and feeling of owning a digital asset would not have been the same. In our case, the dApp helps the user to represent citiesin the Ethereum world, and make the experience of using Ethereum more fun and friendly!</p>
+<p>However, the interest and feeling of owning a digital asset would not have been the same. In our case, the dApp helps the user to represent cities in the Ethereum world, and make the experience of using Ethereum more fun and friendly!</p>
 
 <p><img src="/img/architecture/via-dapp-interraction.png" alt="Ethereum Smart Contract Direct Interraction" /></p>
 
@@ -170,39 +180,39 @@ ga('send', 'pageview');
 
 <p>We built the dApp on top of ReactJS with the help of <a href="https://github.com/ethereum/web3.js/">web3js library</a>.</p>
 
-<p>We picked <a href="https://reactjs.org/">React JS</a> and <a href="https://redux.js.org/">Redux</a> mainly beacuse one of our developer is used to it and could build the app really quickly with it. Some cool features like the <a href="https://redux.js.org/api-reference/store">Redux Store</a> helped us to make the user experience smoother.</p>
+<p>We picked <a href="https://reactjs.org/">React JS</a> and <a href="https://redux.js.org/">Redux</a> mainly because one of our developer is used to it and could build the app really quickly with it. Some cool features like the <a href="https://redux.js.org/api-reference/store">Redux Store</a> helped us to make the user experience smoother.</p>
 
 <!-- The most challenging part of this choice was for the 2 others developers that were not really familiar with it to pick it up. An alternative would have been using [VueJS](https://vuejs.org/), but every developer has its own preference. -->
 
-<p>What can be confusing with creating an dApp for Ethereum, is that <strong>you don&rsquo;t need to setup the web3js library</strong> in your application. Your users have to do it, with a provider (like Metamask) that will inject the library in your website. You&rsquo;ll then use all the features of web3 to call the functions of your smart contract.</p>
+<p>What can be confusing with creating a dApp for Ethereum, is that <strong>you don&rsquo;t need to setup the web3js library</strong> in your application. Your users have to do it, with a provider (like Metamask) that will inject the library in your website. You&rsquo;ll then use all the features of web3 to call the functions of your smart contract.</p>
 
-<p>A good practise is to detect if we can access to the web3 object. If so, we allow the user to do all the actions in our dApp. Itherwise, we recommend them one provider like <a href="https://metamask.io">Metamask</a>(that will inject the web3js library. A bad practise we ofen see is to not allow your potencial users to discover your dApp if they don&rsquo;t have any provider setup in their browser.</p>
+<p>A good practice is to detect if we can access to the web3 object. If so, we allow the user to do all the actions in our dApp. Otherwise, we recommend them one provider like <a href="https://metamask.io">Metamask</a>(that will inject the web3js library. A bad practice we ofren see is to forbid your potencial users to discover your dApp if they don&rsquo;t have any provider setup in their browser.</p>
 
 <p><img src="/img/architecture/asking-metamask.png" alt="Asking user to setup Metamaks" /></p>
 
-<p>So our dApp interracts with the contract with the help of a provider like Metamask. When the user want to do a transaction with on our contract, we call a function in web3JS that will open a Metamask popup. This popup will be prepoplated with the function you ask to call, and if necessary, the amount of Ether you need to send to the contract.</p>
+<p>So our dApp interracts with the contract with the help of a provider like Metamask. When the user wants to do a transaction on our contract, we call a function in web3JS that will open a Metamask popup. This popup will be pre-filled with the function you ask to call, and if necessary, the amount of Ether you need to send to the contract.</p>
 
 <p><img src="/img/architecture/daap-interractions.png" alt="Asking user to setup Metamaks" /></p>
 
-<p>After the user confirm the action, . You&rsquo;ll have to handle all the cases that could happen, like pending, failed or confirmed status. The transaction can fail for multiple reasons. We will talk more about those reasons and how to handle them in an other post.</p>
+<p>After the user confirm the action, you&rsquo;ll need to handle all the cases that could happen, like pending, failed or confirmed status. The transaction can fail for multiple reasons. We will talk more about those reasons and how to handle them in an other post.</p>
 
-<p>Perhaps now you&rsquo;re wondering if the data we show on the dApp come from the blockchain? It&rsquo;s not. The react app uses a traditionnal API to show all the informations to our users. Those information are stored in a Postgresql database. However, we repliace all those data from the Ethereum blockchain. And this, with the help of a listener.</p>
+<p>Perhaps now you&rsquo;re wondering if the data we show on the dApp come from the blockchain? It&rsquo;s not. The react app uses a traditionnal API to show all the informations to our users. Those informations are stored in a Postgresql database. We replicate all those datas from the Ethereum blockchain to the SQL database. And this, with the help of our <strong>listener</strong>.</p>
 
 <!-- This choice was made to be able to do data manipulation easier, and have a reliable  -->
 
 <h2 id="3-the-listener-with-near-realtime-replication">3. The Listener (with near Realtime replication)</h2>
 
-<p>The listener is certainly the main componenent that helped us (developers) to <strong>ship new feature faster</strong>. It is easier for us to deal with a traditional API than raw data coming from the blockchain.</p>
+<p>The listener is certainly the main component that help us (developers) to <strong>ship new features faster</strong>. It is also easier for us to deal with a traditional API than raw datas coming from the blockchain.</p>
 
 <p>To achieve <strong>near real time replication</strong>, we use the help of <a href="http://solidity.readthedocs.io/en/latest/contracts.html#events">events</a>. Each information changing in our smart contract trigger some events. A <strong>listener</strong> catches the change and replicate instantly the data in the database. We buit the listener with Python and the <a href="https://github.com/ethereum/web3.py">web3 py</a> library.</p>
 
 <p><img src="/img/architecture/event-triggered.png" alt="event in citymayor" /></p>
 
-<p>We made this listener as solid as possible and cabable of handling any kind over unexptected scenarios. It also has a &ldquo;<em>backfill mode</em>&rdquo; in case where we would need to reprocess some data for any reasons. We use the Ethereum blockchain as a <strong>single source of truth</strong>.</p>
+<p>We made this listener as solid as possible and capable of handling any kind of unexptected scenarios. It also has a &ldquo;<em>backfill mode</em>&rdquo; in case where we would need to reprocess some data for any reasons. We use the Ethereum blockchain as a <strong>single source of truth</strong>.</p>
 
 <p>The listener have to read the events from an Ethereum node. We decided to run our own node with <a href="https://github.com/ethereum/go-ethereum/wiki/geth">geth</a>. The node needs to be synced with the main network and get any new transactions from the Ethereum network as fast as possible. You&rsquo;ll need to understand that if our node is too behind the last block, the dApp will be late to show the last events to our users. This part was a bit challenging for us, but we will make an other post to explain how we handled it.</p>
 
-<p>It also has to have the ability to keep a checkpoint, we did that with a simple file. really useful when you restart the listener</p>
+<p>It also has to have the ability to recover in case of crash. We did that with having a checkpoint at every new event received. This checkpoint is kept in a file.</p>
 
 <p><img src="/img/architecture/listener.png" alt="realtime ethereum replication" /></p>
 
@@ -214,7 +224,7 @@ ga('send', 'pageview');
 
 <p><img src="/img/architecture/live-journal.png" alt="realtime ethereum replication" /></p>
 
-<p>The other reason to have an API was to be able to store sensible informations. As all data stored in the Ethereum blockchain are a public we couldn&rsquo;t use it as the only data store. This was really useful for us to store emails of our users. We will cover how to do a transaction with your own API without having to go though the blockchain in an other blog post.</p>
+<p>The other reason to have an API was to be able to store sensible informations. As all datas stored in the Ethereum blockchain are  public, we couldn&rsquo;t use it as the only data store. This was really useful for us to store emails of our users. We will cover how to do a transaction with your own API without having to go though the blockchain in an other blog post.</p>
 
 <p>Here a schema of the CityMayor database (old version) with next to it the data structure of the contract representing it.
 <a href="/img/architecture/bdd-diagram.png"><img src="/img/architecture/bdd-diagram.png" alt="realtime ethereum replication" /></a>
@@ -223,7 +233,7 @@ ga('send', 'pageview');
 <h2 id="conclusion">Conclusion</h2>
 
 <ul>
-<li>The CityMayor dApp is an hybride one: half centralized, half decentralized. This mainly help us, to ship and maintain features easily</li>
+<li>The CityMayor dApp is an hybrid one: half centralized, half decentralized. This mainly helps us to ship and maintain features easily</li>
 <li>All key transactions (buy/sell/offers) happen directly on the Ethereum blockchain with the help of an Ethereum provider (Metamask, Mist, etc..)</li>
 <li>We have a &ldquo;<em>listener</em>&rdquo;, helping to replicate in (almost) realtime all data changes that happen on our contract, from the Ethereum network to a PostgreSQL database.</li>
 <li>The dApp only read data from a REST API</li>
