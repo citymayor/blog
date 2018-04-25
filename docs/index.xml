@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CityMayor Blog</title>
+    <title>CityMayor</title>
     <link>https://blog.citymayor.co/</link>
-    <description>Recent content on CityMayor Blog</description>
+    <description>Recent content on CityMayor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Mar 2018 16:47:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Mar 2018 20:26:52 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.citymayor.co/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Anatomy of an Ethereum dApp with Realtime Replication using Zeppelin, Python, Postgresql, React and Geth</title>
+      <link>https://blog.citymayor.co/posts/anatomy-of-an-ethereum-dapp/</link>
+      <pubDate>Tue, 13 Mar 2018 20:26:52 +0000</pubDate>
+      
+      <guid>https://blog.citymayor.co/posts/anatomy-of-an-ethereum-dapp/</guid>
+      <description>We got many questions on how CityMayor, our dApp to trade cities with Ethereum, was working under the hood. We will try to explain it in this blog post and the reasons behind those decisions.
+For our requirements:
+ We wanted to offer the best dApp experience to the CityMayor users and avoid a slow dApp. Non-ethereum users should to be able to take a look at what we were doing without the need to install metamask or use something like Mist/MetaMask.</description>
+    </item>
     
     <item>
       <title>How Someone Tried to Exploit a Flaw in Our Smart Contract and Steal All of Its Ether</title>
@@ -17,7 +28,7 @@
       <pubDate>Thu, 08 Mar 2018 16:47:00 +0000</pubDate>
       
       <guid>https://blog.citymayor.co/posts/how-someone-tried-to-exploit-a-flaw-in-our-smart-contract-and-steal-all-of-its-ether/</guid>
-      <description>On March 7th, we noticed some weird transactions happening on CityMayor. First, someone used our contract directly instead of going through the DAPP. We know that, because a nickname is mandatory if you want to use the DAPP to interact with the CityMayor contract.
+      <description>On March 7th, we noticed some weird transactions happening on CityMayor. First, someone used our contract directly instead of going through the dAPP. We know that, because a nickname is mandatory if you want to use the DAPP to interact with the CityMayor contract.
 Now, don&amp;rsquo;t get me wrong, that&amp;rsquo;s pretty neat! We are not against people using the contract directly, and we actually encourage you to do so :) We&amp;rsquo;ve extensively documented the smart contract on etherscan.</description>
     </item>
     
