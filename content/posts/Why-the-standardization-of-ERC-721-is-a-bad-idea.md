@@ -1,6 +1,6 @@
 ---
 title: "Why The Standardization Of ERC-721 Is A Bad Idea"
-date: 2018-04-25T18:20:00Z
+date: 2018-04-25T16:20:00Z
 draft: false
 ---
 
