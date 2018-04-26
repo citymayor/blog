@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>CityMayor  | Why The Standardization Of ERC-721 Is A Bad Idea</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.35" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    
+
+    <link href='https://blog.citymayor.co/dist/main.css' rel='stylesheet' type="text/css" />
+    
+      
+    
+
+    
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <meta property="og:title" content="Why The Standardization Of ERC-721 Is A Bad Idea" />
+<meta property="og:description" content="If you know about Cryptokitties, you might wonder what it has done for Ethereum. Because yes, as much as it is &ldquo;just a game&rdquo;, Cryptokitties was the introduction of a new concept called non-fungible tokens: tokens that are different from one another and that can be traded for different prices.
+After the success of Cryptokitties, a number of non-fungible tokens contracts followed with the same recipe: cryptocelebrities, ethermon, &hellip; The idea became so popular that it started to make sense to standardize the concept." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.citymayor.co/posts/why-the-standardization-of-erc-721-is-a-bad-idea/" />
+
+
+
+<meta property="article:published_time" content="2018-04-25T16:20:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-04-25T16:20:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Why The Standardization Of ERC-721 Is A Bad Idea">
+<meta itemprop="description" content="If you know about Cryptokitties, you might wonder what it has done for Ethereum. Because yes, as much as it is &ldquo;just a game&rdquo;, Cryptokitties was the introduction of a new concept called non-fungible tokens: tokens that are different from one another and that can be traded for different prices.
+After the success of Cryptokitties, a number of non-fungible tokens contracts followed with the same recipe: cryptocelebrities, ethermon, &hellip; The idea became so popular that it started to make sense to standardize the concept.">
+
+
+<meta itemprop="datePublished" content="2018-04-25T16:20:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-04-25T16:20:00&#43;00:00" />
+<meta itemprop="wordCount" content="684">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Why The Standardization Of ERC-721 Is A Bad Idea"/>
+<meta name="twitter:description" content="If you know about Cryptokitties, you might wonder what it has done for Ethereum. Because yes, as much as it is &ldquo;just a game&rdquo;, Cryptokitties was the introduction of a new concept called non-fungible tokens: tokens that are different from one another and that can be traded for different prices.
+After the success of Cryptokitties, a number of non-fungible tokens contracts followed with the same recipe: cryptocelebrities, ethermon, &hellip; The idea became so popular that it started to make sense to standardize the concept."/>
+
+      
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-106516-14', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+    
+  </head>
+
+  <body class="ma0 avenir bg-near-white production">
+
+    
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation" style="background-color: #333;padding:8px 20px;">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://blog.citymayor.co" class="f3 fw2 hover-white no-underline white-90 dib">
+      <img src="https://citymayor.co/static/assets/img/logo_long_no_bg.png" width="170px">
+    </a>
+    <div class="flex-l items-center">
+      
+        <ul class="pl0 mr3" style="margin:0;">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://www.citymayor.co" title="back to CityMayor.co page" style="font-size:17px">
+              back to CityMayor.co
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+    <main class="pb7" role="main">
+      
+  <div class="flex-l mt2 mw8 center">
+    <article class="center cf pv5 ph3 ph4-ns mw7">
+      <header>
+        <h1 class="f1">
+          Why The Standardization Of ERC-721 Is A Bad Idea
+        </h1>
+      </header>
+      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
+        <p>If you know about <a href="https://www.cryptokitties.co/">Cryptokitties</a>, you might wonder what it has done for Ethereum. Because yes, as much as it is &ldquo;just a game&rdquo;, Cryptokitties was the introduction of a new concept called <strong>non-fungible tokens</strong>: tokens that are different from one another and that can be traded for different prices.</p>
+
+<p><img src="/img/erc721/cryptokitties.png" alt="cryptokitties" /></p>
+
+<p>After the <a href="https://hackernoon.com/how-we-made-100k-trading-cryptokitties-2d69aebe715b">success</a> of Cryptokitties, a number of non-fungible tokens contracts followed with the same recipe: <a href="https://cryptoclarified.com/2018/02/08/22-million-spent-on-celebrity-trading-card-beta-crypto-celebrities-is-the-new-crypto-craze/">cryptocelebrities</a>, <a href="http://ethermon.net/">ethermon</a>, &hellip; The idea became so popular that it started to make sense to standardize the concept. The <a href="http://erc721.org/">ERC-721</a> draft was born.</p>
+
+<p><img src="/img/erc721/nft.png" alt="nft examples" /></p>
+
+<p>&ldquo;ERC&rdquo; stands for <strong>Ethereum Request for Comment</strong> and if you know about standards and the IETF in particular, you might have recognized the &ldquo;Request for Comment&rdquo; part. The idea behind some of these ERC standards is to facilitate support of Ethereum concepts in order to democratize their ideas. For example, <a href="https://en.wikipedia.org/wiki/ERC20">ERC-20</a> is the standard for <strong>tokens</strong>. All ICOs use it. If you want your token to be supported by a trading exchange you pretty much have no other choice but to support that standard (by implementing the functions it specifies). You&rsquo;ll see that <a href="http://etherscan.io">Etherscan</a>, <a href="https://metamask.io">Metamask</a>, <a href="https://wallet.gnosis.pm/">most</a> <a href="https://github.com/paritytech/parity">multi-signature</a> <a href="https://github.com/BitGo/eth-multisig-v2">wallets</a>, etc&hellip; actually recognize all tokens that have been implemented via the ERC-20 standard and display information on them. For example, see the <a href="https://etherscan.io/address/0x4bdde1e9fbaef2579dd63e2abbf0be445ab93f10">Etherscan page for the CityMayor contract</a>, because yes the CityCoin of CityMayor is an ERC-20 token :)</p>
+
+<p><img src="/img/erc721/citycoin.png" alt="etherscan citycoin" /></p>
+
+<p>Standardizing non-fungible tokens would allow for the same kind of interaction, for example both <a href="https://opensea.io/">OpenSea</a> and <a href="https://rarebits.io/">RareBits</a> are platforms to trade such assets from contracts like CityMayor or Cryptokitties.</p>
+
+<p>Back to the <a href="https://github.com/ethereum/EIPs/issues/721">ERC-721</a> draft (which has actually spawned more than just one ERC draft: <a href="https://github.com/ethereum/EIPs/issues/821">ERC-821</a>, <a href="https://github.com/ethereum/EIPs/issues/875">ERC-875</a>). As you can see if you glance over the ERC, things look really similar to the ERC-20 with functions like <code>transfer()</code> and <code>getBalance()</code>.</p>
+
+<p><strong>One might wonder why the standard has chosen the same names as the ERC-20 standard.</strong></p>
+
+<p>And indeed, they ran into problems, CityMayor being the first.</p>
+
+<p>To understand the issue, you need to understand the <a href="https://etherscan.io/address/0x4bdde1e9fbaef2579dd63e2abbf0be445ab93f10#code">CityMayor smart contract</a> which is an ERC-20 smart contract (CityCoins) that also includes a non-fungible tokens (cities). The concept is explained in details on our <a href="https://citymayor.co/whitepaper">whitepaper</a> but to make it short it&rsquo;s <strong>Cryptokitties meets an ICO</strong>: coins can only be obtained by buying assets in the CityMayor smart contract. More coins can also be obtained by holding assets.</p>
+
+<p>This idea of mixing tokens with non-fungible tokens was something that we wanted to explore early on due to the lack of interaction during ICOs. <strong>Most (if not all) ICOs do not really need a smart contract to operate, and surprisingly some actually do not even have one</strong>. The alternative was to force interaction with a smart contract to obtain coins, which is what we did with CityMayor where the CityCoin token is minted during the initial purchase of each assets (which are limited by the contract).</p>
+
+<p>Because of this deep integration, <strong>CityMayor needs to use a single smart contract to handle both the ERC-20 tokens and the non-fungible tokens</strong>. Following widely adopted standards like the ERC-20 token standard is a no-brainer, but following the upcoming ERC-721 standard was a decision we wish we could have taken as well. Because of the function <strong>naming colliding</strong> between the two standards, this was not possible.</p>
+
+<p>We&rsquo;re hopping to raise awareness about these issues, as more and more contracts will look into pushing the idea of non-fungible tokens to its limit. <strong>Limiting the interaction of this ERC with other ERC will limit progress and innovation.</strong></p>
+
+<p>Note that this is issue is actually a <strong>security vulnerability</strong> in cryptography called &ldquo;domain separation&rdquo;.</p>
+
+<p>Because of this confusion between the standards, we might see <strong>theft and loss of ethers</strong> happen in the future in cases where clients would wrongly detect ERC-721 smart contracts as ERC-20 contracts.
+Take a look at Etherscan and how it handles ERC-721 contracts like <a href="https://etherscan.io/address/0xb1690C08E213a35Ed9bAb7B318DE14420FB57d8C">Cryptokitties</a>, you will see that ERC-721 is already causing trouble.</p>
+
+<p><img src="/img/erc721/cryptokitties_token.png" alt="cryptokitties ERC-20" /></p>
+
+<p><a href="https://www.citymayor.co">CityMayor</a> is a new concept born from mixing Crypokitties with an ICO. Tokens can be obtained by buying a city and observing trades of cities in the region. More information on our <a href="https://www.citymayor.co/whitepaper">whitepaper</a>.</p>
+
+<p><i class="fas fa-university"></i> <strong>The United Nations</strong></p>
+
+      </div>
+
+
+
+      
+<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	 
+</style>
+<div id="mc_embed_signup">
+<form action="https://citymayor.us12.list-manage.com/subscribe/post?u=59a68bd5a7911d959c3704a0e&amp;id=471d9ce240" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<h2>Subscribe to the CityMayor newsletter</h2>
+<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+</div>
+	<div id="mce-responses" class="clear">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_59a68bd5a7911d959c3704a0e_471d9ce240" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+
+    </article>
+  </div>
+
+  
+
+    </main>
+    <footer class="bg-near-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://blog.citymayor.co" >
+    &copy; 2018 CityMayor
+  </a>
+  
+
+
+
+
+
+
+
+
+  </div>
+</footer>
+
+    <script src="https://blog.citymayor.co/dist/app.bundle.js" async></script>
+
+  </body>
+</html>

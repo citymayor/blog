@@ -6,10 +6,20 @@
     <description>Recent content in Posts on CityMayor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 13 Mar 2018 20:26:52 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Apr 2018 16:20:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.citymayor.co/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why The Standardization Of ERC-721 Is A Bad Idea</title>
+      <link>https://blog.citymayor.co/posts/why-the-standardization-of-erc-721-is-a-bad-idea/</link>
+      <pubDate>Wed, 25 Apr 2018 16:20:00 +0000</pubDate>
+      
+      <guid>https://blog.citymayor.co/posts/why-the-standardization-of-erc-721-is-a-bad-idea/</guid>
+      <description>If you know about Cryptokitties, you might wonder what it has done for Ethereum. Because yes, as much as it is &amp;ldquo;just a game&amp;rdquo;, Cryptokitties was the introduction of a new concept called non-fungible tokens: tokens that are different from one another and that can be traded for different prices.
+After the success of Cryptokitties, a number of non-fungible tokens contracts followed with the same recipe: cryptocelebrities, ethermon, &amp;hellip; The idea became so popular that it started to make sense to standardize the concept.</description>
+    </item>
     
     <item>
       <title>Anatomy of an Ethereum dApp with Realtime Replication using Zeppelin, Python, Postgresql, React and Geth</title>
