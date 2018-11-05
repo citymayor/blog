@@ -39,7 +39,7 @@ For our requirements:
 
 <meta itemprop="datePublished" content="2018-03-13T20:26:52&#43;00:00" />
 <meta itemprop="dateModified" content="2018-03-13T20:26:52&#43;00:00" />
-<meta itemprop="wordCount" content="1420">
+<meta itemprop="wordCount" content="1445">
 
 
 
@@ -201,7 +201,7 @@ if (!doNotTrack) {
 
 <p>The listener also has the ability to recover in case of crash. We did that with having a checkpoint at every new event received. This checkpoint is kept in a text file.</p>
 
-<p>The listener has to read the events from an Ethereum node. At first, we ran our own Ethereum node, with <a href="https://github.com/ethereum/go-ethereum/">geth</a>. However, maintaining an Ethereum node wasn&rsquo;t the easiest thing to do. It took us lot of maintenance, often crashed, needed lot of SSD disk space. It became really costly to maintain it. We decided to switch to <a href="https://nodablock.com">Nodablock</a> to access to the Ethereum network. They will provide an API and access to the events. It is perfect for the listener.</p>
+<p>The listener has to read the events from an Ethereum node. At first, we ran our own Ethereum node, with <a href="https://github.com/ethereum/go-ethereum/">geth</a>. However, maintaining an Ethereum node wasn&rsquo;t the easiest thing to do. It took us lot of maintenance, often crashed, needed lot of SSD disk space. It became really costly (for time and money) to maintain it. We decided to switch to <a href="https://nodablock.com">Nodablock</a> to access to the Ethereum network. They will provide an API and access to the events. It is perfect for the listener, and allow is to focus on the dApp without having to worry if our listenner had access to the Ethereum network.</p>
 
 <p><img src="/img/architecture/listener.png" alt="realtime ethereum replication" /></p>
 
