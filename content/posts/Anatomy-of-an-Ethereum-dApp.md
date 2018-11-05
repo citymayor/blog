@@ -86,7 +86,7 @@ We made this listener as solid as possible and capable of handling any kind of u
 
 The listener also has the ability to recover in case of crash. We did that with having a checkpoint at every new event received. This checkpoint is kept in a text file.
 
-The listener has to read the events from an Ethereum node. At first, we ran our own Ethereum node, with <a href="https://github.com/ethereum/go-ethereum/">geth</a>. However, maintaining an Ethereum node wasn't the easiest thing to do. It took us lot of maintenance, often crashed, needed lot of SSD disk space. It became really costly to maintain it. We decided to switch to <a href="https://nodablock.com">Nodablock</a> to access to the Ethereum network. They will provide an API and access to the events. It is perfect for the listener.
+The listener has to read the events from an Ethereum node. At first, we ran our own Ethereum node, with <a href="https://github.com/ethereum/go-ethereum/">geth</a>. However, maintaining an Ethereum node wasn't the easiest thing to do. It took us lot of maintenance, often crashed, needed lot of SSD disk space. It became really costly (for time and money) to maintain it. We decided to switch to <a href="https://nodablock.com">Nodablock</a> to access to the Ethereum network. They will provide an API and access to the events. It is perfect for the listener, and allow is to focus on the dApp without having to worry if our listenner had access to the Ethereum network.
 
 
 ![realtime ethereum replication](/img/architecture/listener.png)
