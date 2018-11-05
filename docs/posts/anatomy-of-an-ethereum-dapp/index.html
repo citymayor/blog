@@ -39,7 +39,7 @@ For our requirements:
 
 <meta itemprop="datePublished" content="2018-03-13T20:26:52&#43;00:00" />
 <meta itemprop="dateModified" content="2018-03-13T20:26:52&#43;00:00" />
-<meta itemprop="wordCount" content="1430">
+<meta itemprop="wordCount" content="1420">
 
 
 
@@ -199,9 +199,9 @@ if (!doNotTrack) {
 
 <p>We made this listener as solid as possible and capable of handling any kind of unexptected scenarios. It also has a &ldquo;<em>backfill mode</em>&rdquo; in case where we would need to reprocess some data for any reasons. We use the Ethereum blockchain as a <strong>single source of truth</strong>.</p>
 
-<p>The listener have to read the events from an Ethereum node. We decided to run our own node with <a href="https://github.com/ethereum/go-ethereum/wiki/geth">geth</a>. The node needs to be synced with the main network and get any new transactions from the Ethereum network as fast as possible. You&rsquo;ll need to understand that if our node is too behind the last block, the dApp will be late to show the last events to our users. This part was a bit challenging for us, but we will make an other post to explain how we handled it.</p>
+<p>The listener also has the ability to recover in case of crash. We did that with having a checkpoint at every new event received. This checkpoint is kept in a text file.</p>
 
-<p>It also has to have the ability to recover in case of crash. We did that with having a checkpoint at every new event received. This checkpoint is kept in a file.</p>
+<p>The listener has to read the events from an Ethereum node. At first, we ran our own Ethereum node, with <a href="https://github.com/ethereum/go-ethereum/">geth</a>. However, maintaining an Ethereum node wasn&rsquo;t the easiest thing to do. It took us lot of maintenance, often crashed, needed lot of SSD disk space. It became really costly to maintain it. We decided to switch to <a href="https://nodablock.com">Nodablock</a> to access to the Ethereum network. They will provide an API and access to the events. It is perfect for the listener.</p>
 
 <p><img src="/img/architecture/listener.png" alt="realtime ethereum replication" /></p>
 
