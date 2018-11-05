@@ -84,9 +84,10 @@ To achieve **near real time replication**, we use the help of [events](http://so
 
 We made this listener as solid as possible and capable of handling any kind of unexptected scenarios. It also has a "_backfill mode_" in case where we would need to reprocess some data for any reasons. We use the Ethereum blockchain as a **single source of truth**.
 
-The listener have to read the events from an Ethereum node. We decided to run our own node with [geth](https://github.com/ethereum/go-ethereum/wiki/geth). The node needs to be synced with the main network and get any new transactions from the Ethereum network as fast as possible. You'll need to understand that if our node is too behind the last block, the dApp will be late to show the last events to our users. This part was a bit challenging for us, but we will make an other post to explain how we handled it.
+The listener also has the ability to recover in case of crash. We did that with having a checkpoint at every new event received. This checkpoint is kept in a text file.
 
-It also has to have the ability to recover in case of crash. We did that with having a checkpoint at every new event received. This checkpoint is kept in a file.
+The listener has to read the events from an Ethereum node. At first, we ran our own Ethereum node, with <a href="https://github.com/ethereum/go-ethereum/">geth</a>. However, maintaining an Ethereum node wasn't the easiest thing to do. It took us lot of maintenance, often crashed, needed lot of SSD disk space. It became really costly to maintain it. We decided to switch to <a href="https://nodablock.com">Nodablock</a> to access to the Ethereum network. They will provide an API and access to the events. It is perfect for the listener.
+
 
 ![realtime ethereum replication](/img/architecture/listener.png)
 
